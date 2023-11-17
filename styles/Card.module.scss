@@ -1,0 +1,60 @@
+@import './_variables.scss';
+.retroCard {
+	background-color: $r-color-1;
+
+	img {
+		background-color: $r-color-2;
+	}
+}
+
+.modernCard {
+	background-color: $m-color-1;
+	border-radius: 0.3rem;
+	font-family: sans-serif;
+	.imgWrapper {
+		width: 100%;
+		background-color: $m-color-2;
+
+		border: 0.125rem solid $m-color-3;
+	}
+	h1 {
+		color: $m-color-3;
+		margin: 0 auto;
+		width: 78%;
+		font-size: 1rem;
+		font-weight: 400;
+		text-align: left;
+	}
+	h2 {
+		font-size: 0.4rem;
+		font-weight: 200;
+	}
+}
+.retroCard,
+.modernCard {
+	position: relative;
+	width: 20vw;
+	text-align: center;
+	h1 {
+		line-height: 2rem;
+	}
+	h2 {
+		font-size: 1rem;
+	}
+	.imgWrapper {
+		border-left: 0px;
+		border-right: 0px;
+		height: 7rem;
+		img {
+			display: block;
+			bottom: 1rem;
+			height: 8rem;
+			width: 7rem;
+			margin: auto;
+		}
+	}
+}
+.cardContainer {
+	display: flex;
+	gap: 0.3rem;
+}
