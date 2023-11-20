@@ -75,6 +75,10 @@
 
 .cardContainer {
 	display: flex;
+	margin: 0 auto;
+	width: 80vw;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 0.3rem;
 	@media screen and (max-width: $md-max) {
 		flex-direction: column;
