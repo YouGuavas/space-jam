@@ -1,12 +1,9 @@
 import Head from 'next/head';
 import clientPromise from '../lib/mongodb';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import ToggleButton from '../components/ToggleButton';
 import styles from '../styles/Page.module.scss';
-import Layout from '../components/Layout';
-
-import Link from 'next/link';
-
+import Card from '../components/Card';
+import ToggleButton from '../components/ToggleButton';
 type ConnectionStatus = {
 	isConnected: boolean;
 };
@@ -15,6 +12,7 @@ export const getServerSideProps: GetServerSideProps<any> = async () => {
 	try {
 		const client = await clientPromise;
 		const db = client.db('space-jam');
+		const monstars = db.collection('Monstars');
 		// `await clientPromise` will use the default database passed in the MONGODB_URI
 		// However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
 		//
@@ -23,9 +21,11 @@ export const getServerSideProps: GetServerSideProps<any> = async () => {
 		//
 		// Then you can execute queries against your database like so:
 		// db.find({}) or any of the MongoDB Node Driver commands
+		const monstarsRoster = await monstars.find({}).toArray();
+		const serializedMonstarsRoster = JSON.parse(JSON.stringify(monstarsRoster));
 
 		return {
-			props: { isConnected: true },
+			props: { isConnected: true, monstarsRoster: serializedMonstarsRoster },
 		};
 	} catch (e) {
 		console.error(e);
@@ -37,19 +37,22 @@ export const getServerSideProps: GetServerSideProps<any> = async () => {
 
 export default function Home({
 	isConnected,
+	monstarsRoster,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
 		<div className="container">
 			<Head>
-				<title>SJBL | Home</title>
+				<title>SJBL | Monstars</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<main>
 				<ToggleButton />
-				{isConnected ? (
-					<div className="">
-						<Link href="/monstars">Monstars</Link>
+				{monstarsRoster.length > 0 ? (
+					<div className={styles.cardContainer}>
+						{monstarsRoster.map((player: any, index: any) => (
+							<Card key={index} player={monstarsRoster[index]} />
+						))}
 					</div>
 				) : (
 					<h2 className="subtitle">
