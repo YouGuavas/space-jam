@@ -11,14 +11,18 @@ export default function Card(props: any) {
 		return p;
 	};
 	return (
-		<div className={theme}>
-			<h1 className="title">{props.player.name}</h1>
+		<div className={`${theme} ${styles.card}`}>
+			<div className={styles.onTopOfWrapper}>
+				<h1 className="title">{props.player.name}</h1>
+			</div>
 			<div className={styles.imgWrapper}>
 				<img src={props.player.photo}></img>
 			</div>
-			<h2>{`Position: ${props.player.position}`}</h2>
-			<h3>{`Overall: ${props.player.overall}`}</h3>
-			<h3>{`Height: ${handleNumberDecimal()}`}</h3>
+			<div className={styles.onTopOfWrapper}>
+				<h2>{`Position: ${props.player.position}`}</h2>
+				<h3>{`Overall: ${props.player.overall}`}</h3>
+				<h3>{`Height: ${handleNumberDecimal()}`}</h3>
+			</div>
 		</div>
 	);
 }
