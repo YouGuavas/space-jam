@@ -3,6 +3,9 @@ import clientPromise from '../lib/mongodb';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import styles from '../styles/Page.module.scss';
 import Card from '../components/Card';
+
+import { getTheme } from '../redux/themeSlice';
+import { useSelector } from 'react-redux';
 import ToggleButton from '../components/ToggleButton';
 type ConnectionStatus = {
 	isConnected: boolean;
@@ -36,7 +39,6 @@ export const getServerSideProps: GetServerSideProps<any> = async () => {
 };
 
 export default function Home({
-	isConnected,
 	monstarsRoster,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
@@ -47,7 +49,6 @@ export default function Home({
 			</Head>
 
 			<main>
-				<ToggleButton />
 				{monstarsRoster.length > 0 ? (
 					<div className={styles.cardContainer}>
 						{monstarsRoster.map((player: any, index: any) => (

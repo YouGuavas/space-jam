@@ -1,18 +1,14 @@
 import React from 'react';
 
 import Nav from './Nav';
+import ToggleButton from './ToggleButton';
 import styles from '../styles/Layout.module.scss';
 
 const Layout = ({ children }) => {
 	return (
 		<>
 			<div className={styles.container}>
-				<Header />
-
-				<Nav
-					links={['Home', 'Work', 'Skills', 'Contact']}
-					pages={['skills', 'work', 'contact']}
-				/>
+				<ToggleButton />
 			</div>
 
 			{children}
