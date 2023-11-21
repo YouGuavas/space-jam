@@ -1,0 +1,31 @@
+@import './_variables.scss';
+
+.active {
+	opacity: 0.7;
+}
+.container {
+	display: flex;
+	gap: 0.3rem;
+}
+
+.modernButton,
+.retroButton {
+	cursor: pointer;
+}
+.modernButton {
+	padding: 0.5rem;
+	background-color: $m-color-2;
+	color: $m-color-1;
+	border-color: $m-color-1;
+	border: none;
+	border-radius: 0.2rem;
+}
+
+.retroButton {
+	padding: 0.2rem;
+
+	background-color: $r-color-2;
+	color: $r-color-1;
+	border-color: $r-color-1;
+	font-weight: 800;
+}

@@ -1,9 +1,32 @@
 @import './_variables.scss';
 .retroCard {
 	background-color: $r-color-1;
-
-	img {
-		background-color: $r-color-2;
+	border-radius: 0.3rem;
+	font-family: sans-serif;
+	.imgWrapper {
+		width: 100%;
+		z-index: 1;
+		background-color: $m-color-2;
+		background-image: url('../public/images/basketball-court.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		border: 0.125rem solid $m-color-3;
+	}
+	.onTopOfWrapper {
+		z-index: 2;
+		background-color: inherit;
+	}
+	h1 {
+		color: $m-color-3;
+		margin: 0 auto;
+		width: 78%;
+		font-size: 1rem;
+		font-weight: 400;
+		text-align: left;
+	}
+	h2 {
+		font-size: 0.4rem;
+		font-weight: 200;
 	}
 }
 

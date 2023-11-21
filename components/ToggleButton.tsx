@@ -1,3 +1,5 @@
+import styles from '../styles/ToggleButton.module.scss';
+
 import { getTheme } from '../redux/themeSlice';
 import { useSelector } from 'react-redux';
 import { setTheme } from '../redux/themeSlice';
@@ -11,9 +13,27 @@ export default function ToggleButton() {
 		dispatch(setTheme(theme));
 	};
 	return (
-		<div className="">
-			<button onClick={() => changeTheme('modern')}>Modern</button>
-			<button onClick={() => changeTheme('retro')}>Retro</button>
+		<div className={styles.container}>
+			<button
+				className={`${styles.toggleButton} ${
+					theme === 'retro'
+						? `${styles.retroButton}`
+						: `${styles.active} ${styles.modernButton}`
+				}`}
+				onClick={() => changeTheme('modern')}
+			>
+				Modern
+			</button>
+			<button
+				className={
+					theme === 'retro'
+						? `${styles.active} ${styles.retroButton}`
+						: `${styles.modernButton}`
+				}
+				onClick={() => changeTheme('retro')}
+			>
+				Retro
+			</button>
 		</div>
 	);
 }
