@@ -1,13 +1,6 @@
 import Head from 'next/head';
 import clientPromise from '../lib/mongodb';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import ToggleButton from '../components/ToggleButton';
-import styles from '../styles/Page.module.scss';
-import Layout from '../components/Layout';
-
-import { getTheme } from '../redux/themeSlice';
-import { useSelector } from 'react-redux';
-
 import Link from 'next/link';
 
 type ConnectionStatus = {
@@ -41,7 +34,6 @@ export const getServerSideProps: GetServerSideProps<any> = async () => {
 export default function Home({
 	isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-	const theme: any = useSelector(getTheme);
 	return (
 		<div className="container">
 			<Head>
