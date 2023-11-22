@@ -4,9 +4,6 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import styles from '../styles/Page.module.scss';
 import Card from '../components/Card';
 
-import { getTheme } from '../redux/themeSlice';
-import { useSelector } from 'react-redux';
-import ToggleButton from '../components/ToggleButton';
 type ConnectionStatus = {
 	isConnected: boolean;
 };
@@ -41,7 +38,6 @@ export const getServerSideProps: GetServerSideProps<any> = async () => {
 export default function Home({
 	monstarsRoster,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-	const theme: string = useSelector(getTheme);
 	return (
 		<div className="container">
 			<Head>
