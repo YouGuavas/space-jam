@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { getTheme } from '../redux/themeSlice';
+import { useSelector } from 'react-redux';
 import styles from '../styles/Card.module.scss';
 
 export default function Card(props: any) {
-	const [theme] = useState(styles.modernCard);
+	const theme: string = useSelector(getTheme);
+
 	const handleNumberDecimal = () => {
 		const n = props.player.height.$numberDecimal;
 		const preDecimal = Math.floor(Math.abs(n));
@@ -11,7 +13,11 @@ export default function Card(props: any) {
 		return p;
 	};
 	return (
-		<div className={`${theme} ${styles.card}`}>
+		<div
+			className={`${styles.card} ${
+				theme === 'modern' ? styles.modernCard : styles.retroCard
+			}`}
+		>
 			<div className={styles.onTopOfWrapper}>
 				<h1 className="title">{props.player.name}</h1>
 			</div>

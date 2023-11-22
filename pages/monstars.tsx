@@ -41,6 +41,7 @@ export const getServerSideProps: GetServerSideProps<any> = async () => {
 export default function Home({
 	monstarsRoster,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+	const theme: string = useSelector(getTheme);
 	return (
 		<div className="container">
 			<Head>
