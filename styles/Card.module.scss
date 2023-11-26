@@ -34,6 +34,22 @@
 	background-color: $m-color-1;
 	border-radius: 0.3rem;
 	font-family: sans-serif;
+	h2,
+	h3 {
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 0.1rem;
+		font-weight: 200;
+	}
+	.attribute {
+		font-size: 1rem;
+		font-weight: 200;
+	}
+	h2,
+	h3,
+	.attribute {
+		line-height: 1rem;
+	}
 	.imgWrapper {
 		width: 100%;
 		z-index: 1;
@@ -55,10 +71,6 @@
 		font-weight: 400;
 		text-align: left;
 	}
-	h2 {
-		font-size: 0.4rem;
-		font-weight: 200;
-	}
 }
 .retroCard,
 .modernCard {
@@ -71,8 +83,9 @@
 	h1 {
 		line-height: 2rem;
 	}
-	h2 {
-		font-size: 1rem;
+
+	.row {
+		display: flex;
 	}
 	.imgWrapper {
 		border-left: 0px;

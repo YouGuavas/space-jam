@@ -51,9 +51,18 @@ export default function Card(props: any) {
 				<img src={props.player.photo}></img>
 			</div>
 			<div className={styles.onTopOfWrapper}>
-				<h2>{`Position: ${props.player.position}`}</h2>
-				<h3>{`Overall: ${props.player.overall}`}</h3>
-				<h3>{`Height: ${handleNumberDecimal()}`}</h3>
+				<div className={styles.row}>
+					<h2>{`Position:`}</h2>{' '}
+					<p className={styles.attribute}>{`${props.player.position}`}</p>
+				</div>
+				<div className={styles.row}>
+					<h3>{`Overall:`}</h3>{' '}
+					<p className={styles.attribute}>{`${props.player.overall}`}</p>
+				</div>
+				<div className={styles.row}>
+					<h3>{`Height:`}</h3>{' '}
+					<p className={styles.attribute}>{`${handleNumberDecimal()}`}</p>
+				</div>
 			</div>
 		</div>
 	);
