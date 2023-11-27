@@ -16,40 +16,62 @@
 		z-index: 2;
 		background-color: inherit;
 	}
-	h1 {
-		color: $m-color-3;
+	h2 {
+		color: $r-color-2;
 		margin: 0 auto;
 		width: 78%;
 		font-size: 1rem;
 		font-weight: 400;
 		text-align: left;
 	}
-	h2 {
+	h3 {
 		font-size: 0.4rem;
 		font-weight: 200;
 	}
 }
 
 .modernCard {
-	background-color: $m-color-1;
+	background-color: $m-color-4;
 	border-radius: 0.3rem;
 	font-family: sans-serif;
-	h2,
+	border: 1px solid $m-color-5;
+	padding: 0.2rem;
+
 	h3 {
 		text-transform: uppercase;
 		font-size: 0.8rem;
 		letter-spacing: 0.1rem;
 		font-weight: 200;
+		margin-left: 1rem;
+	}
+	h3 {
+		color: $m-color-5;
 	}
 	.attribute {
 		font-size: 1rem;
 		font-weight: 200;
 	}
-	h2,
 	h3,
 	.attribute {
 		line-height: 1rem;
 	}
+	h2 {
+		color: $m-color-5;
+		margin: 0 auto;
+		width: 78%;
+		font-size: 1rem;
+		font-weight: 400;
+		text-align: left;
+	}
+	.row {
+		border-bottom: 1px solid $m-color-5;
+		gap: 1rem;
+		align-items: center;
+	}
+	.row:nth-last-child(1) {
+		border-bottom: none;
+	}
+
 	.imgWrapper {
 		width: 100%;
 		z-index: 1;
@@ -57,21 +79,14 @@
 		background-image: url('../public/images/basketball-court.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
-		border: 0.125rem solid $m-color-3;
+		border: 0.125rem solid $m-color-5;
 	}
 	.onTopOfWrapper {
 		z-index: 2;
 		background-color: inherit;
 	}
-	h1 {
-		color: $m-color-3;
-		margin: 0 auto;
-		width: 78%;
-		font-size: 1rem;
-		font-weight: 400;
-		text-align: left;
-	}
 }
+
 .retroCard,
 .modernCard {
 	position: relative;
@@ -80,7 +95,7 @@
 	@media screen and (max-width: $md-max) {
 		width: 50vw;
 	}
-	h1 {
+	h2 {
 		line-height: 2rem;
 	}
 

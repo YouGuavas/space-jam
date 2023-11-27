@@ -1,0 +1,17 @@
+@import './variables';
+.container-modern main {
+	height: 100vh;
+	background-image: linear-gradient(
+		to bottom right,
+		$m-color-1,
+		$m-color-3,
+		$m-color-2
+	);
+}
+.container-retro {
+	height: 100vh;
+	background-image: linear-gradient(to bottom left, $r-color-1, $r-color-3);
+}
+body {
+	margin: 0;
+}

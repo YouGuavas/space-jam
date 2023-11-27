@@ -3,6 +3,7 @@ import clientPromise from '../lib/mongodb';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import styles from '../styles/Page.module.scss';
 import Card from '../components/Card';
+import PageContainer from '../components/PageContainer';
 
 type ConnectionStatus = {
 	isConnected: boolean;
@@ -39,13 +40,14 @@ export default function Home({
 	monstarsRoster,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
-		<div className="container">
+		<PageContainer>
 			<Head>
 				<title>SJBL | Monstars</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<main>
+				<h1>Monstars</h1>
 				{monstarsRoster.length > 0 ? (
 					<div className={styles.cardContainer}>
 						{monstarsRoster.map((player: any, index: any) => (
@@ -61,6 +63,6 @@ export default function Home({
 			</main>
 
 			<footer></footer>
-		</div>
+		</PageContainer>
 	);
 }

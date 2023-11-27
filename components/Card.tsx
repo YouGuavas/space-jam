@@ -45,14 +45,14 @@ export default function Card(props: any) {
 			}`}
 		>
 			<div className={styles.onTopOfWrapper}>
-				<h1 className="title">{props.player.name}</h1>
+				<h2 className="title">{props.player.name}</h2>
 			</div>
 			<div className={styles.imgWrapper}>
 				<img src={props.player.photo}></img>
 			</div>
 			<div className={styles.onTopOfWrapper}>
 				<div className={styles.row}>
-					<h2>{`Position:`}</h2>{' '}
+					<h3>{`Position:`}</h3>{' '}
 					<p className={styles.attribute}>{`${props.player.position}`}</p>
 				</div>
 				<div className={styles.row}>

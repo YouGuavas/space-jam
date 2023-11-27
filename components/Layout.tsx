@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Nav from './Nav';
 import ToggleButton from './ToggleButton';
 import styles from '../styles/Layout.module.scss';
 

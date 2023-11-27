@@ -2,6 +2,7 @@ import Head from 'next/head';
 import clientPromise from '../lib/mongodb';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import Link from 'next/link';
+import PageContainer from '../components/PageContainer';
 
 type ConnectionStatus = {
 	isConnected: boolean;
@@ -35,7 +36,7 @@ export default function Home({
 	isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
-		<div className="container">
+		<PageContainer>
 			<Head>
 				<title>SJBL | Home</title>
 				<link rel="icon" href="/favicon.ico" />
@@ -55,6 +56,6 @@ export default function Home({
 			</main>
 
 			<footer></footer>
-		</div>
+		</PageContainer>
 	);
 }
