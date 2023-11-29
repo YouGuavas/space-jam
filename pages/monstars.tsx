@@ -15,5 +15,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 export default function Home({
 	roster,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-	return <TeamPage roster={roster} />;
+	if (roster) {
+		return <TeamPage roster={roster} />;
+	}
+	{
+		return <div>You are NOT connected to MongoDB.</div>;
+	}
 }
