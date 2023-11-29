@@ -4,7 +4,7 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 
 import TeamPage from '../components/TeamPage';
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-	const { props, error } = await fetchData('Monstars');
+	const { props, error } = await fetchData('Tune Squad');
 
 	if (error) {
 		console.error(error);
