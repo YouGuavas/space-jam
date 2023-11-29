@@ -1,7 +1,6 @@
 @import './_variables.scss';
 
 .modern {
-	height: 100vh;
 	background-image: linear-gradient(
 		to bottom right,
 		$m-color-1,
@@ -10,8 +9,16 @@
 	);
 }
 .retro {
+	background-image: url('../public/images/misc/space.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.modern,
+.retro {
 	height: 100vh;
-	background-image: linear-gradient(to bottom left, $r-color-1, $r-color-3);
+	@media screen and (max-width: $md-max) {
+		height: 100%;
+	}
 }
 .cardContainer {
 	display: flex;
