@@ -5,8 +5,9 @@ import { setTheme } from '../redux/themeSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import styles from '../styles/Card.module.scss';
+import { CardProps } from '../utils/types';
 
-export default function Card(props: any) {
+export default function Card(props: CardProps) {
 	const dispatch = useDispatch();
 	const theme = useSelector(getTheme);
 	const [themeLoaded, setThemeLoaded] = useState(false);
@@ -27,7 +28,7 @@ export default function Card(props: any) {
 	}, [dispatch, themeLoaded]);
 
 	const handleNumberDecimal = () => {
-		const n = props.player.height.$numberDecimal;
+		const n = parseFloat(props.player.height.$numberDecimal);
 		const preDecimal = Math.floor(Math.abs(n));
 		const postDecimal = (n - preDecimal) * 12;
 		const p = `${preDecimal}'${postDecimal}"`;

@@ -32,11 +32,8 @@ export default function ToggleButton() {
 	}
 
 	const changeTheme = (theme: string) => {
-		console.log(theme);
-
 		dispatch(setTheme(theme));
 		localStorage.setItem('theme', theme);
-		console.log(theme);
 	};
 	return (
 		<div className={styles.container}>
