@@ -1,6 +1,31 @@
 @import './_variables.scss';
 
+.modern,
+.retro {
+	padding-top: 2rem;
+
+	main {
+		display: grid;
+		gap: 2rem;
+	}
+	height: 100vh;
+	@media screen and (max-width: $md-max) {
+		height: 100%;
+	}
+}
 .modern {
+	h1 {
+		font-family: sans-serif;
+		text-align: center;
+		border: 1px solid $m-color-5;
+		width: 30vw;
+		padding: 2rem;
+		margin: 0 auto;
+		background-color: $m-color-4;
+		border-radius: 0.2rem;
+		font-weight: 200;
+		color: $m-color-5;
+	}
 	background-image: linear-gradient(
 		to bottom right,
 		$m-color-1,
@@ -19,13 +44,6 @@
 		padding: 1rem;
 		text-align: center;
 		color: $r-color-4;
-	}
-}
-.modern,
-.retro {
-	height: 100vh;
-	@media screen and (max-width: $md-max) {
-		height: 100%;
 	}
 }
 .cardContainer {
