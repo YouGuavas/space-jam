@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { getTheme } from '../redux/themeSlice';
-import { setTheme } from '../redux/themeSlice';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { getTheme, setTheme } from '../redux/themeSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from '../styles/Card.module.scss';
 import { CardProps } from '../utils/types';
 

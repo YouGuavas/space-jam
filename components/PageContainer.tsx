@@ -2,10 +2,8 @@ import React, { ReactNode } from 'react';
 
 import { useEffect, useState } from 'react';
 
-import { getTheme } from '../redux/themeSlice';
-import { useSelector } from 'react-redux';
-import { setTheme } from '../redux/themeSlice';
-import { useDispatch } from 'react-redux';
+import { getTheme, setTheme } from '../redux/themeSlice';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/Page.module.scss';
 
 export default function PageContainer({ children }: { children: ReactNode }) {

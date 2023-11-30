@@ -1,10 +1,8 @@
 import styles from '../styles/ToggleButton.module.scss';
 import { useEffect, useState } from 'react';
 
-import { getTheme } from '../redux/themeSlice';
-import { useSelector } from 'react-redux';
-import { setTheme } from '../redux/themeSlice';
-import { useDispatch } from 'react-redux';
+import { getTheme, setTheme } from '../redux/themeSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function ToggleButton() {
 	const dispatch = useDispatch();
