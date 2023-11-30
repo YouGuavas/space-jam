@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Page.module.scss';
 import Card from './Card';
 import PageContainer from './PageContainer';
-import { PageProps, Player } from '../utils/types';
+import { PageProps, Player } from '../types/types';
 
 export default function Home(props: PageProps) {
 	return (
@@ -13,7 +13,7 @@ export default function Home(props: PageProps) {
 			</Head>
 
 			<main>
-				<h1>Monstars</h1>
+				<h1>{props.team}</h1>
 				{props.roster.length > 0 ? (
 					<div className={styles.cardContainer}>
 						{props.roster.map((player: Player, index: number) => (

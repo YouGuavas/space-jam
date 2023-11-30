@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getTheme, setTheme } from '../redux/themeSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from '../styles/Card.module.scss';
-import { CardProps } from '../utils/types';
+import { CardProps } from '../types/types';
 
 export default function Card(props: CardProps) {
 	const dispatch = useDispatch();
