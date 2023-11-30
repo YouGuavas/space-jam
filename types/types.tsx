@@ -18,6 +18,7 @@ export interface NavProps {
 //page
 export interface PageProps {
 	roster: Roster;
+	team: string;
 }
 //team
 export interface Props {
