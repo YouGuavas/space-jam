@@ -12,7 +12,10 @@ export default function Home() {
 
 			<main>
 				<div className="">
-					<Link href="/monstars">Monstars</Link>
+					<h1 className="main-title">Space Jam Basketball League</h1>
+					<div className="image-container">
+						<img src="/images/misc/home-1.png" />
+					</div>
 				</div>
 			</main>
 

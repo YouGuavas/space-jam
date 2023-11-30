@@ -12,6 +12,24 @@
 	height: 100vh;
 	background-image: linear-gradient(to bottom left, $r-color-1, $r-color-3);
 }
+div {
+	main {
+		.image-container {
+			display: flex;
+			justify-content: center;
+			img {
+				width: 80vw;
+			}
+		}
+		div {
+			h1.main-title {
+				background-color: inherit;
+				border: none;
+				width: initial;
+			}
+		}
+	}
+}
 body {
 	margin: 0;
 }
