@@ -1,0 +1,9 @@
+@import './_variables.scss';
+.modern {
+	background-color: $m-color-4;
+}
+.retro {
+	width: 10vw;
+	height: 100vh;
+	display: inline-block;
+}

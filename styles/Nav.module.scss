@@ -1,0 +1,32 @@
+@import './_variables.scss';
+
+.nav {
+	height: 6vh;
+}
+.modern {
+	font-family: sans-serif;
+
+	ul {
+		display: flex;
+		list-style: none;
+		gap: 1rem;
+		font-family: inherit;
+		justify-content: center;
+
+		li {
+			font-family: inherit;
+
+			a {
+				color: $m-color-5;
+				text-decoration: none;
+				font-family: inherit;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				transition: 0.4s;
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+}

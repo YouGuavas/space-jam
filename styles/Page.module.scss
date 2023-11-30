@@ -34,9 +34,12 @@
 	);
 }
 .retro {
+	width: 88.8vw;
+	display: inline-block;
 	background-image: url('../public/images/misc/space.png');
 	background-repeat: no-repeat;
 	background-size: cover;
+	top: 0;
 	h1 {
 		border: 1px solid $r-color-5;
 		width: 30vw;
