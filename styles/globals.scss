@@ -21,12 +21,20 @@ div {
 				width: 80vw;
 			}
 		}
-		div {
-			h1.main-title {
+		section {
+			.main-title {
 				background-color: inherit;
 				border: none;
+				padding: none;
 				width: initial;
+				@media screen and (max-width: $md-max) {
+					font-size: unset;
+				}
 			}
+		}
+		.text-container {
+			width: 80vw;
+			margin: 0 auto;
 		}
 	}
 }

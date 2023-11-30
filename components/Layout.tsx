@@ -37,12 +37,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
 					theme === 'modern' ? styles.modern : styles.retro
 				}`}
 			>
-				<ToggleButton />
+				<div>
+					<ToggleButton />
 
-				<Nav links={['Home', 'Monstars', 'Tune Squad']} />
+					<Nav links={['Home', 'Monstars', 'Tune Squad']} />
+				</div>
+				{children}
 			</div>
-
-			{children}
 		</>
 	);
 };

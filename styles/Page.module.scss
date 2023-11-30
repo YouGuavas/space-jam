@@ -8,12 +8,16 @@
 		display: grid;
 		gap: 2rem;
 	}
-	height: 100vh;
+	min-height: 100vh;
 	@media screen and (max-width: $md-max) {
 		height: 100%;
 	}
 }
 .modern {
+	section {
+		display: grid;
+		gap: 1rem;
+	}
 	h1 {
 		font-family: sans-serif;
 		text-align: center;
@@ -25,6 +29,9 @@
 		border-radius: 0.2rem;
 		font-weight: 200;
 		color: $m-color-5;
+		@media screen and (max-width: $sm-max) {
+			font-size: 1.4rem;
+		}
 	}
 	background-image: linear-gradient(
 		to bottom right,
@@ -34,8 +41,7 @@
 	);
 }
 .retro {
-	width: 88.8vw;
-	display: inline-block;
+	min-width: 89vw;
 	background-image: url('../public/images/misc/space.png');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -47,6 +53,9 @@
 		padding: 1rem;
 		text-align: center;
 		color: $r-color-4;
+	}
+	p {
+		color: $r-color-5;
 	}
 }
 .cardContainer {
