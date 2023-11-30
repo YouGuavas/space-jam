@@ -23,9 +23,10 @@
 				text-transform: uppercase;
 				letter-spacing: 0.1rem;
 				transition: 0.4s;
-				&:hover {
-					opacity: 0.8;
-				}
+			}
+			.active,
+			a:hover {
+				opacity: 0.6;
 			}
 		}
 	}
