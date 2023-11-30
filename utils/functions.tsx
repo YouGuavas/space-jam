@@ -1,5 +1,5 @@
 import clientPromise from '../lib/mongodb';
-import { Props } from './types';
+import { Props } from '../types/types';
 
 export const fetchData = async (
 	collection: string

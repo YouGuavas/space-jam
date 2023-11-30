@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AppState } from './store';
 
-// ## CartState Interface
+// ## ThemeState Interface
 export interface ThemeState {
 	theme: string;
 }
 
-// ## Define the initial state of Cart State
+// ## Define the initial state of Theme State
 const initialState: ThemeState = {
 	theme: 'modern',
 };

@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { themeSlice } from './themeSlice';
+import { activeSlice } from './activeSlice';
 import { createWrapper } from 'next-redux-wrapper';
 
 const makeStore = () =>
