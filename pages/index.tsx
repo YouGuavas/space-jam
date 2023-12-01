@@ -1,7 +1,33 @@
 import Head from 'next/head';
 import PageContainer from '../components/PageContainer';
+import { useEffect, useState } from 'react';
+
+import { getTheme, setTheme } from '../redux/themeSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Home() {
+	const dispatch = useDispatch();
+	const theme = useSelector(getTheme);
+	const [themeLoaded, setThemeLoaded] = useState(false);
+
+	useEffect(() => {
+		if (!themeLoaded) {
+			// Try to get the theme from localStorage
+			const storedTheme = localStorage.getItem('theme');
+
+			if (storedTheme) {
+				// If the theme is found in localStorage, set it in the Redux store
+				dispatch(setTheme(storedTheme));
+			}
+
+			// Mark the theme as loaded
+			setThemeLoaded(true);
+		}
+	}, [dispatch, themeLoaded]);
+	if (!themeLoaded) {
+		// If theme is not loaded yet, you can render a loading state or return null
+		return null;
+	}
 	return (
 		<PageContainer>
 			<Head>
@@ -26,7 +52,13 @@ export default function Home() {
 						</p>
 					</div>
 					<div className="image-container">
-						<img src="/images/misc/home-1.png" />
+						<img
+							src={
+								theme === 'modern'
+									? '/images/misc/home-1.png'
+									: '/images/misc/home-2.png'
+							}
+						/>
 					</div>
 					<div className="text-container">
 						<p>
