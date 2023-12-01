@@ -12,6 +12,7 @@
 		gap: 1rem;
 		font-family: inherit;
 		justify-content: center;
+		padding: 0;
 
 		li {
 			font-family: inherit;
@@ -23,6 +24,9 @@
 				text-transform: uppercase;
 				letter-spacing: 0.1rem;
 				transition: 0.4s;
+				@media screen and (max-width: $sm-max) {
+					font-size: 0.8rem;
+				}
 			}
 			.active,
 			a:hover {
@@ -33,4 +37,7 @@
 }
 .retro {
 	width: 15vw;
+	ul {
+		padding-left: 1.4rem;
+	}
 }
