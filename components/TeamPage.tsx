@@ -8,7 +8,7 @@ export default function Home(props: PageProps) {
 	return (
 		<PageContainer>
 			<Head>
-				<title>SJBL | Monstars</title>
+				<title>SJBL | {props.team}</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 

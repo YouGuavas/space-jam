@@ -1,7 +1,7 @@
 @import './_variables.scss';
 
 .nav {
-	height: 6vh;
+	min-height: 6vh;
 }
 .modern {
 	font-family: sans-serif;
@@ -30,4 +30,7 @@
 			}
 		}
 	}
+}
+.retro {
+	width: 15vw;
 }
