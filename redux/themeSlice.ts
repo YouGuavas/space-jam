@@ -1,10 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AppState } from './store';
-
-// ## ThemeState Interface
-export interface ThemeState {
-	theme: string;
-}
+import { ThemeState } from '../types/types';
 
 // ## Define the initial state of Theme State
 const initialState: ThemeState = {

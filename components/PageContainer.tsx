@@ -5,11 +5,18 @@ import { useEffect, useState } from 'react';
 import { getTheme, setTheme } from '../redux/themeSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/Page.module.scss';
+import { getTeams, setTeams } from '../redux/teamSlice';
+import { InferGetServerSidePropsType } from 'next';
+import { getServerSideProps } from '../utils/functions';
+import { PageContainerProps } from '../types/types';
 
-export default function PageContainer({ children }: { children: ReactNode }) {
+export default function PageContainer({ children, teams }: PageContainerProps) {
 	const dispatch = useDispatch();
 	const theme = useSelector(getTheme);
+
+	console.log(teams);
 	const [themeLoaded, setThemeLoaded] = useState(false);
+	const [teamsLoaded, setTeamsLoaded] = useState(false);
 
 	useEffect(() => {
 		if (!themeLoaded) {
@@ -25,8 +32,13 @@ export default function PageContainer({ children }: { children: ReactNode }) {
 			setThemeLoaded(true);
 		}
 	}, [dispatch, themeLoaded]);
+	useEffect(() => {
+		if (!teamsLoaded) {
+			setTeamsLoaded(true);
+		}
+	}, [dispatch, teamsLoaded]);
 
-	if (!themeLoaded) {
+	if (!themeLoaded || !teamsLoaded) {
 		// If theme is not loaded yet, you can render a loading state or return null
 		return null;
 	}

@@ -1,4 +1,5 @@
 import { Int32 } from 'mongodb';
+import { ReactNode } from 'react';
 //utility
 export interface Player {
 	name: string;
@@ -20,6 +21,11 @@ export interface PageProps {
 	roster: Roster;
 	team: string;
 }
+export interface PageContainerProps {
+	children: ReactNode;
+	teams: any;
+}
+
 //team
 export interface Props {
 	isConnected: boolean;
@@ -29,4 +35,14 @@ export interface Props {
 //card
 export interface CardProps {
 	player: Player;
+}
+
+// TeamState Interface
+export interface TeamState {
+	teams: Array<Array<any>>;
+}
+
+// ThemeState Interface
+export interface ThemeState {
+	theme: string;
 }

@@ -13,7 +13,9 @@ export default function Home(props: PageProps) {
 			</Head>
 
 			<main>
-				<h1>{props.team}</h1>
+				<h1 className="outlined-text">
+					{props.logo ? <img src={props.logo} /> : props.team}
+				</h1>
 				{props.roster.length > 0 ? (
 					<div className={styles.cardContainer}>
 						{props.roster.map((player: Player, index: number) => (
