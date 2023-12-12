@@ -1,12 +1,14 @@
 @import './variables';
-.container-modern main {
-	height: 100vh;
-	background-image: linear-gradient(
-		to bottom right,
-		$m-color-1,
-		$m-color-3,
-		$m-color-2
-	);
+.container-modern {
+	main {
+		height: 100vh;
+		background-image: linear-gradient(
+			to bottom right,
+			$m-color-1,
+			$m-color-3,
+			$m-color-2
+		);
+	}
 }
 .container-retro {
 	height: 100vh;
@@ -40,4 +42,18 @@ div {
 }
 body {
 	margin: 0;
+}
+.outlined-text {
+	font-family: 'Arial', sans-serif; // Set your desired font family
+	font-size: 24px; // Set your desired font size
+	color: white; // Set the text color
+	background-color: #3498db; // Set the background color
+
+	// Create outline
+	-webkit-text-stroke: 1px black; // Set the outline color and width
+	color: transparent; // Make the text transparent to show only the outline
+
+	// Add additional styling if needed
+	padding: 10px;
+	display: inline-block;
 }

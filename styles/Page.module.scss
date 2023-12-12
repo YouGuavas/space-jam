@@ -17,22 +17,16 @@
 	section {
 		display: grid;
 		gap: 1rem;
-	}
-	h1 {
-		font-family: sans-serif;
-		text-align: center;
-		border: 1px solid $m-color-5;
-		width: 30vw;
-		padding: 2rem;
-		margin: 0 auto;
-		background-color: $m-color-4;
-		border-radius: 0.2rem;
-		font-weight: 200;
-		color: $m-color-5;
-		@media screen and (max-width: $sm-max) {
-			font-size: 1.4rem;
+		div.text-container {
+			@media screen and (max-width: $sm-max) {
+				font-size: 0.8rem;
+			}
+			@media screen and (min-width: $md-max) {
+				font-size: 1.2rem;
+			}
 		}
 	}
+
 	background-image: linear-gradient(
 		to bottom right,
 		$m-color-1,
