@@ -26,6 +26,7 @@
 .modern {
 	section {
 		display: grid;
+		font-family: sans-serif;
 		gap: 1rem;
 		div.text-container {
 			@media screen and (max-width: $sm-max) {
