@@ -10,11 +10,10 @@ import { InferGetServerSidePropsType } from 'next';
 import { getServerSideProps } from '../utils/functions';
 import { PageContainerProps } from '../types/types';
 
-export default function PageContainer({ children, teams }: PageContainerProps) {
+export default function PageContainer({ children }: PageContainerProps) {
 	const dispatch = useDispatch();
 	const theme = useSelector(getTheme);
 
-	console.log(teams);
 	const [themeLoaded, setThemeLoaded] = useState(false);
 	const [teamsLoaded, setTeamsLoaded] = useState(false);
 

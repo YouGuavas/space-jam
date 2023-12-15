@@ -7,6 +7,16 @@
 	main {
 		display: grid;
 		gap: 2rem;
+		.logoHeader {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			margin: 0;
+			img {
+				height: 12rem;
+			}
+		}
 	}
 	min-height: 100vh;
 	@media screen and (max-width: $md-max) {
@@ -33,6 +43,15 @@
 		$m-color-3,
 		$m-color-2
 	);
+	.logoHeader {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		img {
+			height: 12rem;
+		}
+	}
 }
 .retro {
 	min-width: 89vw;

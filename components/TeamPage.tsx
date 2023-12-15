@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Page.module.scss';
 import Card from './Card';
 import PageContainer from './PageContainer';
+import LogoHeader from './LogoHeader';
 import { PageProps, Player } from '../types/types';
 
 export default function Home(props: PageProps) {
@@ -13,9 +14,8 @@ export default function Home(props: PageProps) {
 			</Head>
 
 			<main>
-				<h1 className="outlined-text">
-					{props.logo ? <img src={props.logo} /> : props.team}
-				</h1>
+				<LogoHeader logo={props.logo} team={props.team} />
+
 				{props.roster.length > 0 ? (
 					<div className={styles.cardContainer}>
 						{props.roster.map((player: Player, index: number) => (

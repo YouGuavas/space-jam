@@ -20,10 +20,14 @@ export interface NavProps {
 export interface PageProps {
 	roster: Roster;
 	team: string;
+	logo: any;
+}
+export interface LogoProps {
+	team: string;
+	logo: any;
 }
 export interface PageContainerProps {
 	children: ReactNode;
-	teams: any;
 }
 
 //team

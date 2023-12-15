@@ -16,7 +16,13 @@ export default function Home({
 	roster,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	if (roster) {
-		return <TeamPage team="Tune Squad" roster={roster} />;
+		return (
+			<TeamPage
+				logo="/images/logos/tune-squad.png"
+				team="Tune Squad"
+				roster={roster}
+			/>
+		);
 	}
 	{
 		return <div>You are NOT connected to MongoDB.</div>;
