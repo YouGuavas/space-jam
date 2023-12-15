@@ -19,6 +19,7 @@
 
 			a {
 				color: $m-color-5;
+				opacity: 0.6;
 				text-decoration: none;
 				font-family: inherit;
 				text-transform: uppercase;
@@ -30,7 +31,7 @@
 			}
 			.active,
 			a:hover {
-				opacity: 0.6;
+				opacity: 1;
 			}
 		}
 	}
