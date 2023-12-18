@@ -1,7 +1,5 @@
 import { Int32 } from 'mongodb';
 import { ReactNode } from 'react';
-import { InferGetServerSidePropsType } from 'next';
-import { getServerSideProps } from '../utils/functions';
 
 //utility
 export interface Player {
@@ -27,6 +25,7 @@ export interface PageProps {
 export interface TeamPageProps {
 	team: string;
 	logo: any;
+	roster: Roster;
 }
 export interface LogoProps {
 	team: string;

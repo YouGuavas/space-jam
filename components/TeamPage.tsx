@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Page.module.scss';
 import Card from './Card';
-import PageContainer from './PageContainer';
 import LogoHeader from './LogoHeader';
 import { TeamPageProps, Player } from '../types/types';
 

@@ -1,7 +1,6 @@
 import clientPromise from '../lib/mongodb';
-import { Props, PageContainerProps } from '../types/types';
+import { Props } from '../types/types';
 import { GetServerSideProps } from 'next';
-import TeamPage from '../components/TeamPage';
 
 export const fetchData = async (
 	collection: string

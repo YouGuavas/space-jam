@@ -2,8 +2,6 @@
 
 .modern,
 .retro {
-	padding-top: 2rem;
-
 	main {
 		display: grid;
 		gap: 2rem;
@@ -24,6 +22,17 @@
 	}
 }
 .modern {
+	display: grid;
+	gap: 2rem;
+	background-image: linear-gradient(
+		to bottom right,
+		$m-color-1,
+		$m-color-3,
+		$m-color-2
+	);
+	.header {
+		background-color: $m-color-4;
+	}
 	section {
 		display: grid;
 		font-family: sans-serif;
@@ -38,29 +47,26 @@
 		}
 	}
 
-	background-image: linear-gradient(
-		to bottom right,
-		$m-color-1,
-		$m-color-3,
-		$m-color-2
-	);
 	.logoHeader {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0;
 		img {
 			height: 12rem;
 		}
 	}
 }
 .retro {
+	.header {
+		background-color: white;
+	}
+	main {
+		box-shadow: 8px 0 8px black inset;
+	}
 	min-width: 89vw;
 	background-image: url('../public/images/misc/space.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	top: 0;
-	box-shadow: 8px 0 8px black inset;
+	display: grid;
+	grid-template-columns: auto auto;
 
 	h1 {
 		border: 1px solid $r-color-5;

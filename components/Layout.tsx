@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Nav from './Nav';
 import ToggleButton from './ToggleButton';
-import styles from '../styles/Layout.module.scss';
+import styles from '../styles/Page.module.scss';
 import { useEffect, useState } from 'react';
 
 import { getTheme, setTheme } from '../redux/themeSlice';
@@ -37,7 +37,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 					theme === 'modern' ? styles.modern : styles.retro
 				}`}
 			>
-				<div>
+				<div className={styles.header}>
 					<ToggleButton />
 
 					<Nav links={['Home', 'Monstars', 'Tune Squad']} />

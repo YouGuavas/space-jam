@@ -45,9 +45,5 @@ export default function PageContainer({
 		return null;
 	}
 
-	return (
-		<div className={theme === 'retro' ? styles.retro : styles.modern}>
-			{renderPages()}
-		</div>
-	);
+	return <div>{renderPages()}</div>;
 }
