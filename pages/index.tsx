@@ -29,7 +29,7 @@ export default function Home() {
 		return null;
 	}
 	return (
-		<PageContainer>
+		<PageContainer roster={[]} team="" logo={null}>
 			<Head>
 				<title>SJBL | Home</title>
 				<link rel="icon" href="/favicon.ico" />

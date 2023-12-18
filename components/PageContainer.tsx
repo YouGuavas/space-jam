@@ -1,21 +1,29 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import { useEffect, useState } from 'react';
 
 import { getTheme, setTheme } from '../redux/themeSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/Page.module.scss';
-import { getTeams, setTeams } from '../redux/teamSlice';
-import { InferGetServerSidePropsType } from 'next';
-import { getServerSideProps } from '../utils/functions';
-import { PageContainerProps } from '../types/types';
+import TeamPage from './TeamPage';
+import { PageContainerProps, Roster } from '../types/types';
 
-export default function PageContainer({ children }: PageContainerProps) {
+export default function PageContainer({
+	team,
+	logo,
+	children,
+}: PageContainerProps) {
 	const dispatch = useDispatch();
 	const theme = useSelector(getTheme);
-
 	const [themeLoaded, setThemeLoaded] = useState(false);
-	const [teamsLoaded, setTeamsLoaded] = useState(false);
+
+	const renderPages = () => {
+		if (children) return children;
+		//Render children if there are any (such as on index)//
+
+		return <TeamPage team={team} logo={logo} />;
+		//If there are no children, render the TeamPage component//
+	};
 
 	useEffect(() => {
 		if (!themeLoaded) {
@@ -31,20 +39,15 @@ export default function PageContainer({ children }: PageContainerProps) {
 			setThemeLoaded(true);
 		}
 	}, [dispatch, themeLoaded]);
-	useEffect(() => {
-		if (!teamsLoaded) {
-			setTeamsLoaded(true);
-		}
-	}, [dispatch, teamsLoaded]);
 
-	if (!themeLoaded || !teamsLoaded) {
+	if (!themeLoaded) {
 		// If theme is not loaded yet, you can render a loading state or return null
 		return null;
 	}
 
 	return (
 		<div className={theme === 'retro' ? styles.retro : styles.modern}>
-			{children}
+			{renderPages()}
 		</div>
 	);
 }

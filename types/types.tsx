@@ -1,5 +1,8 @@
 import { Int32 } from 'mongodb';
 import { ReactNode } from 'react';
+import { InferGetServerSidePropsType } from 'next';
+import { getServerSideProps } from '../utils/functions';
+
 //utility
 export interface Player {
 	name: string;
@@ -18,7 +21,10 @@ export interface NavProps {
 }
 //page
 export interface PageProps {
-	roster: Roster;
+	team: string;
+	logo: any;
+}
+export interface TeamPageProps {
 	team: string;
 	logo: any;
 }
@@ -28,6 +34,9 @@ export interface LogoProps {
 }
 export interface PageContainerProps {
 	children: ReactNode;
+	team: string;
+	logo: any;
+	roster: Roster;
 }
 
 //team

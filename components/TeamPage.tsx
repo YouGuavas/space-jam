@@ -3,11 +3,11 @@ import styles from '../styles/Page.module.scss';
 import Card from './Card';
 import PageContainer from './PageContainer';
 import LogoHeader from './LogoHeader';
-import { PageProps, Player } from '../types/types';
+import { TeamPageProps, Player } from '../types/types';
 
-export default function Home(props: PageProps) {
+export default function TeamPage(props: TeamPageProps) {
 	return (
-		<PageContainer>
+		<>
 			<Head>
 				<title>SJBL | {props.team}</title>
 				<link rel="icon" href="/favicon.ico" />
@@ -31,6 +31,6 @@ export default function Home(props: PageProps) {
 			</main>
 
 			<footer></footer>
-		</PageContainer>
+		</>
 	);
 }

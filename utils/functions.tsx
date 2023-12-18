@@ -1,6 +1,7 @@
 import clientPromise from '../lib/mongodb';
-import { Props } from '../types/types';
+import { Props, PageContainerProps } from '../types/types';
 import { GetServerSideProps } from 'next';
+import TeamPage from '../components/TeamPage';
 
 export const fetchData = async (
 	collection: string
@@ -24,8 +25,12 @@ export const fetchData = async (
 	}
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-	const { props, error } = await fetchData('Monstars');
+export const getServerSideProps: GetServerSideProps<Props> = async ({
+	params,
+}) => {
+	const team = params?.team as string;
+
+	const { props, error } = await fetchData(team);
 
 	if (error) {
 		console.error(error);
