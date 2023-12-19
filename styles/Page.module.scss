@@ -4,7 +4,6 @@
 .retro {
 	main {
 		display: grid;
-		gap: 2rem;
 		.logoHeader {
 			display: flex;
 			width: 100%;
@@ -23,15 +22,26 @@
 }
 .modern {
 	display: grid;
-	gap: 2rem;
 	background-image: linear-gradient(
 		to bottom right,
 		$m-color-1,
 		$m-color-3,
 		$m-color-2
 	);
+
+	:global {
+		.monstars {
+			background-image: url('../public/images/misc/monstars.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			h1 {
+				margin: 0;
+			}
+		}
+	}
 	.header {
 		background-color: $m-color-4;
+		max-height: 11vh;
 	}
 	section {
 		display: grid;

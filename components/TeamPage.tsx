@@ -12,7 +12,7 @@ export default function TeamPage(props: TeamPageProps) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main>
+			<main className={props.team.toLowerCase()}>
 				<LogoHeader logo={props.logo} team={props.team} />
 
 				{props.roster.length > 0 ? (
