@@ -31,9 +31,23 @@
 
 	:global {
 		.monstars {
-			background-image: url('../public/images/misc/monstars.png');
-			background-repeat: no-repeat;
-			background-size: cover;
+			background-image: linear-gradient(
+				to bottom right,
+				$off-black,
+				$off-black,
+				$off-black-2,
+				$off-black,
+				$off-black,
+				$off-black,
+				$off-black-2,
+				$off-black,
+				$off-black,
+				$off-black,
+				$off-black,
+				$off-black-2,
+				$m-color-3,
+				$m-color-3
+			);
 			h1 {
 				margin: 0;
 			}
