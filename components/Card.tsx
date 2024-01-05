@@ -26,28 +26,36 @@ export default function Card(props: CardProps) {
 	}, [dispatch, themeLoaded]);
 
 	const handleNumberDecimal = (variant: string) => {
-		let n = parseFloat(props.player.number.$numberDecimal);
-		const preDecimal = Math.floor(Math.abs(n));
-		let p = `#${preDecimal}`;
+		let n;
+		let preDecimal;
+		let p;
 		let postDecimal;
 		if (variant === 'height') {
 			n = parseFloat(props.player.height.$numberDecimal);
+			preDecimal = Math.floor(Math.abs(n));
+
 			postDecimal = (n - preDecimal) * 12;
 			p = `${preDecimal}'${postDecimal}"`;
+
 			return p;
 		}
+		n = parseFloat(props.player.number.$numberDecimal);
+		preDecimal = Math.floor(Math.abs(n));
+		p = `#${preDecimal}`;
+
+		console.log(n, preDecimal);
 		postDecimal = (n - preDecimal) * 1;
 		if (postDecimal > 0) {
 			p = `#1/2`;
 			return p;
 		}
-		if (preDecimal === 333333) {
+		if (preDecimal === 33333333) {
 			return '#❤️';
 		}
-		if (preDecimal === 444444) {
+		if (preDecimal === 4444444) {
 			return '#!';
 		}
-		if (preDecimal === 555555) {
+		if (preDecimal === 5555555) {
 			return '#?';
 		}
 		return p;
