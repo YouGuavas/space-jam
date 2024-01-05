@@ -1,4 +1,4 @@
-import { Int32 } from 'mongodb';
+import { Decimal128, Int32 } from 'mongodb';
 import { ReactNode } from 'react';
 
 //utility
@@ -7,6 +7,7 @@ export interface Player {
 	height: {
 		$numberDecimal: string;
 	};
+	number: { $numberDecimal: string };
 	position: string;
 	overall: Int32;
 	photo: string;

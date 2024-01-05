@@ -25,11 +25,31 @@ export default function Card(props: CardProps) {
 		}
 	}, [dispatch, themeLoaded]);
 
-	const handleNumberDecimal = () => {
-		const n = parseFloat(props.player.height.$numberDecimal);
+	const handleNumberDecimal = (variant: string) => {
+		let n = parseFloat(props.player.number.$numberDecimal);
 		const preDecimal = Math.floor(Math.abs(n));
-		const postDecimal = (n - preDecimal) * 12;
-		const p = `${preDecimal}'${postDecimal}"`;
+		let p = `#${preDecimal}`;
+		let postDecimal;
+		if (variant === 'height') {
+			n = parseFloat(props.player.height.$numberDecimal);
+			postDecimal = (n - preDecimal) * 12;
+			p = `${preDecimal}'${postDecimal}"`;
+			return p;
+		}
+		postDecimal = (n - preDecimal) * 1;
+		if (postDecimal > 0) {
+			p = `#1/2`;
+			return p;
+		}
+		if (preDecimal === 333333) {
+			return '#❤️';
+		}
+		if (preDecimal === 444444) {
+			return '#!';
+		}
+		if (preDecimal === 555555) {
+			return '#?';
+		}
 		return p;
 	};
 
@@ -55,12 +75,20 @@ export default function Card(props: CardProps) {
 					<p className={styles.attribute}>{`${props.player.position}`}</p>
 				</div>
 				<div className={styles.row}>
+					<h3>{`Number:`}</h3>{' '}
+					<p className={styles.attribute}>{`${handleNumberDecimal(
+						'number'
+					)}`}</p>
+				</div>
+				<div className={styles.row}>
 					<h3>{`Overall:`}</h3>{' '}
 					<p className={styles.attribute}>{`${props.player.overall}`}</p>
 				</div>
 				<div className={styles.row}>
 					<h3>{`Height:`}</h3>{' '}
-					<p className={styles.attribute}>{`${handleNumberDecimal()}`}</p>
+					<p className={styles.attribute}>{`${handleNumberDecimal(
+						'height'
+					)}`}</p>
 				</div>
 			</div>
 		</div>

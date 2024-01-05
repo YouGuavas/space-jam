@@ -9,8 +9,7 @@ export const fetchData = async (
 		const client = await clientPromise;
 		const db = client.db('space-jam');
 		const monstars = db.collection(collection);
-
-		const roster = await monstars.find({}).toArray();
+		const roster = await monstars.find({}).sort({ number: 1 }).toArray();
 		const serializedRoster = JSON.parse(JSON.stringify(roster));
 
 		return {
